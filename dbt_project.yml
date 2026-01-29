@@ -1,0 +1,20 @@
+name: 'DBT_DEMO'
+version: '1.0.0'
+config-version: 2
+profile: 'DBT_DEMO'
+
+model-paths: ["models"]
+macro-paths: ["macros"]
+
+models:
+  DBT_DEMO:
+    # Use uppercase if your folders in the sidebar are uppercase
+    staging: 
+      +database: DBT_DEMO
+      +schema: STAGE
+      +materialized: incremental
+      
+    mart:
+      +database: DBT_DEMO
+      +schema: marts
+      +materialized: incremental

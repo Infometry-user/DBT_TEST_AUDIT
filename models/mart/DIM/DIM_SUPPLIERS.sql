@@ -1,0 +1,10 @@
+{{ config (materialized = "table") }}
+SELECT
+    SUPPLIER_ID,
+	SUPPLIER_NAME,
+	COUNTRY,
+	CONTACT_EMAIL,
+	CREATED_DATE,
+	MODIFIED_DATE
+FROM
+    {{ ref('STAGE_SUPPLIERS') }} a

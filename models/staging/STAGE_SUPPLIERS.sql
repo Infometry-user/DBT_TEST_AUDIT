@@ -1,0 +1,14 @@
+{{ config (materialized = "table") }}
+SELECT
+    SUPPLIER_ID,
+	SUPPLIER_NAME,
+	COUNTRY,
+	CONTACT_EMAIL,
+	CREATED_DATE,
+	MODIFIED_DATE
+FROM
+    {{ source('raw', 'RAW_SUPPLIERS') }} a
+WHERE CREATED_DATE >= CURRENT_DATE() OR MODIFIED_DATE >= CURRENT_DATE()
+
+
+	

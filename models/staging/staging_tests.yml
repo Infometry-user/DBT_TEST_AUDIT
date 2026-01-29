@@ -1,0 +1,11 @@
+DBT_DEMO.STAGE.STAGE_CUSTOMERSDBT_DEMO.STAGE.STAGE_CUSTOMERSversion: 2
+
+models:
+  - name: STAGE_ORDER_ITEMS
+    columns:
+      - name: QUANTITY
+        tests:
+          - not_null
+          # This native test doesn't require the dbt_utils package
+          - accepted_values:
+              values: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]

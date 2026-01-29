@@ -1,0 +1,17 @@
+sources:
+  - name: raw
+    database: DBT_DEMO
+    schema: LANDING
+    tables:
+      - name: RAW_CUSTOMERS
+      - name: RAW_ORDERS
+      - name: RAW_ORDER_ITEMS
+      - name: RAW_PAYMENTS
+      - name: RAW_PRODUCTS
+      - name: RAW_RETURNS
+      - name: RAW_SHIPMENTS
+      - name: RAW_SUPPLIERS
+      - name: RAW_WAREHOUSES
+  
+
+      

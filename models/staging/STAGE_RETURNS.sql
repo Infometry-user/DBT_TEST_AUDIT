@@ -1,0 +1,19 @@
+{{ config (materialized = "table") }}
+SELECT
+    RETURN_ID,
+    ORDER_ID,
+    PRODUCT_ID,
+    RETURN_REASON,
+    RETURN_DATE,
+    REFUND_AMOUNT,
+    CREATED_DATE,
+    MODIFIED_DATE
+FROM
+    {{ source('raw', 'RAW_RETURNS') }} a
+WHERE CREATED_DATE >= CURRENT_DATE() OR MODIFIED_DATE >= CURRENT_DATE()
+
+
+
+
+
+

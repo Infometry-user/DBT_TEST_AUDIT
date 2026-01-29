@@ -1,0 +1,14 @@
+{{ config (materialized = "table") }}
+SELECT
+    PAYMENT_ID,
+    ORDER_ID,
+    PAYMENT_METHOD,
+    PAYMENT_DATE,
+    PAYMENT_STATUS,
+    AMOUNT,
+    CREATED_DATE,
+    MODIFIED_DATE
+FROM
+    {{ source('raw', 'RAW_PAYMENTS') }} a
+WHERE CREATED_DATE >= CURRENT_DATE() OR MODIFIED_DATE >= CURRENT_DATE()
+

@@ -1,0 +1,13 @@
+DBT_DEMO:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      role: ACCOUNTADMIN
+      account: SARFLFP-WQ73779
+      user: TESTSNOWFLAKE
+      password: Test@1234567890
+      warehouse: COMPUTE_WH
+      database: DBT_DEMO
+      schema: LANDING              
+      threads: 4
