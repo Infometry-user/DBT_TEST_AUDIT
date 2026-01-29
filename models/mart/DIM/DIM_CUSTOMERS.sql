@@ -8,7 +8,7 @@
 
 SELECT
     CUSTOMER_ID,
-    CUSTOMER_NAME as "name",
+    "name",
     EMAIL,
     CITY,
     STATE,
